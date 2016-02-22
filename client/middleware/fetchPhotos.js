@@ -1,4 +1,5 @@
 import fetch from 'isomorphic-fetch'
+import queryString from 'query-string'
 
 const catchError = (err, next, action) =>{
   return next(Object.assign({}, action, {
@@ -9,7 +10,7 @@ const catchError = (err, next, action) =>{
 }
 
 const catchSuccess = (res, next, action) => {
-  
+
   return next(Object.assign({}, action, {
     ...action,
     "type": "fetch photos successful",
@@ -18,7 +19,11 @@ const catchSuccess = (res, next, action) => {
 }
 
 const handleAddLocation = (next, action) => {
-  fetch(`http://127.0.0.1:5000`)
+  const query = queryString.stringify({
+    location: action.payload.label,
+    term: "restaurant"
+  })
+  fetch(`http://127.0.0.1:5000/?${query}`)
   .then((res) => {
     if (res.status >= 400){
       throw "http status " + res.status

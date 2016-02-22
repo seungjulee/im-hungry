@@ -5,7 +5,7 @@ import style from './style.css'
 
 class Header extends Component {
   handleSave(text) {
-    console.log(text)
+    console.log(text,"handlesave")
     if (text.length) {
       this.props.addLocation(text.label)
     }

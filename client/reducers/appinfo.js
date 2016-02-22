@@ -6,10 +6,11 @@ const initialState = [{
 }]
 
 export default handleActions({
-  'add location' (state, action){
-    return state.map(appinfo => {
-      return {...appinfo, zipcode: Number(action.payload)}
-    })
-  }
+  // 'add location' (state, action){
+  //   console.log(action, "aCTION")
+  //   return state.map(appinfo => {
+  //     return {...appinfo, location: action.payload}
+  //   })
+  // }
 
 }, initialState)
