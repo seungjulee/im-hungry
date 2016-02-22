@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import AutoResponsive from 'autoresponsive-react'
 import style from './style.css'
+import {getDistance} from 'geolib'
 
 let arrayList = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 let styleList = {};
@@ -74,16 +75,18 @@ class GridGallery extends Component {
       )
     }
 
+
     const grids = businesses.map((business) => {
+      // const distance = getDistance(business.cordinate,)
       return business.photo_urls.map(url=>{
         let style = {width: 258, height: 258};
         return (
           <div className={"album item"} style={style}>
             <img className="a-cover" src={url}/>
             <p className="a-layer">
-              <a href="#"><span className="al-brand">{"i.brand"}</span> </a>
-              <a href="#"><span className="al-title">{"i.title"}</span></a>
-              <a href="#"><span className="al-count">{"i.count"}</span></a>
+              <a href={business.business_url}><span className="al-brand">{business.business_name}</span> </a>
+              <span className="al-title">{ <img src={business.rating_img_url}/> }</span>
+              <span className="al-count">{business.display_address[0]}</span>
             </p>
           </div>
         )

@@ -19,9 +19,10 @@ const catchSuccess = (res, next, action) => {
 }
 
 const handleAddLocation = (next, action) => {
+  //TODO: save the user location to state
   const query = queryString.stringify({
     location: action.payload.label,
-    term: "restaurant"
+    term: "restaurants"
   })
   fetch(`http://127.0.0.1:5000/?${query}`)
   .then((res) => {

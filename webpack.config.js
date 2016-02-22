@@ -40,6 +40,7 @@ module.exports = {
   resolve: {
     extensions: ['', '.js', '.jsx']
   },
+
   postcss: [
     rucksack({
       autoprefixer: true
