@@ -14,7 +14,6 @@ class App extends Component {
       <div className={style.normal}>
         <Header addLocation={actions.addLocation} />
         <GridGallery images={eaters} />
-        {children}
       </div>
     )
   }
