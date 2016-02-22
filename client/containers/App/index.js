@@ -13,7 +13,7 @@ class App extends Component {
     return (
       <div className={style.normal}>
         <Header addLocation={actions.addLocation} />
-        <GridGallery images={eaters} />
+        <GridGallery businesses={eaters} />
       </div>
     )
   }

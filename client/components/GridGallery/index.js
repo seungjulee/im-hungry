@@ -61,37 +61,47 @@ class GridGallery extends Component {
   }
 
   render() {
-    const {images} = this.props
+    const {businesses} = this.props
+
+    if (businesses[0].text === "InitialState"){
+      return (
+        <section>
+          <div className="albumPanel" >
+            <AutoResponsive ref="container" {...this.getAutoResponsiveProps()}>
+            </AutoResponsive>
+          </div>
+        </section>
+      )
+    }
+
+    const grids = businesses.map((business) => {
+      return business.photo_urls.map(url=>{
+        let style = {width: 258, height: 258};
+        return (
+          <div className={"album item"} style={style}>
+            <img className="a-cover" src={url}/>
+            <p className="a-layer">
+              <a href="#"><span className="al-brand">{"i.brand"}</span> </a>
+              <a href="#"><span className="al-title">{"i.title"}</span></a>
+              <a href="#"><span className="al-count">{"i.count"}</span></a>
+            </p>
+          </div>
+        )
+      })
+    })
+    const finalGrids = grids[0].concat(grids[1])
 
     return (
-      <section style={style}>
-        <div className="albumPanel" >
-          <AutoResponsive ref="container" {...this.getAutoResponsiveProps()}>
-            {
-              images.map((item) => {
-                let style = {
-                  width: 258,
-                  height: 258
-                };
-
-                return (
-                  <div className={"album item"} style={style}>
-                    <img className="a-cover" src={item.url}/>
-
-                    <p className="a-layer">
-                      <a href="#"><span className="al-brand">{"i.brand"}</span> </a>
-                      <span className="al-title">{"i.title"}</span>
-                      <span className="al-count">{"i.count"}</span>
-                    </p>
-                  </div>
-                );
-
-              })
-            }
-          </AutoResponsive>
-        </div>
-      </section>
+      <div className="albumPanel" >
+        <AutoResponsive ref="container" {...this.getAutoResponsiveProps()}>
+          {
+            finalGrids
+          }
+        </AutoResponsive>
+      </div>
     )
+
+
   }
 }
 

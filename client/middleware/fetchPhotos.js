@@ -4,17 +4,16 @@ const catchError = (err, next, action) =>{
   return next(Object.assign({}, action, {
     ...action,
     "type": "fetch photos unsuccessful",
-    "payload": err.toString(),
+    "payload": err.toString()
   }))
 }
 
 const catchSuccess = (res, next, action) => {
+  
   return next(Object.assign({}, action, {
     ...action,
     "type": "fetch photos successful",
-    "payload": res['images'].map((item) => {
-      return item
-    })
+    "payload": res['businesses']
   }))
 }
 
