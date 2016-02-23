@@ -24,6 +24,7 @@ const handleAddLocation = (next, action) => {
     location: action.payload.label,
     term: "restaurants"
   })
+  console.log(query)
   fetch(`http://127.0.0.1:5000/?${query}`)
   .then((res) => {
     if (res.status >= 400){
