@@ -24,10 +24,11 @@ const handleAddLocation = (next, action) => {
     location: action.payload.label,
     term: "restaurants"
   })
+  var queryUrl = ""
   if (process.env.NODE_ENV == "production"){
-    const queryUrl = `http://sjlee.me/imhungry-api/?${query}`
+    queryUrl = `http://sjlee.me/imhungry-api/?${query}`
   } else {
-    const queryUrl = `http://127.0.0.1:5000/?${query}`
+    queryUrl = `http://127.0.0.1:5000/?${query}`
   }
 
   fetch(queryUrl)
