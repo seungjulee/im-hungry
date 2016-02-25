@@ -24,8 +24,13 @@ const handleAddLocation = (next, action) => {
     location: action.payload.label,
     term: "restaurants"
   })
-  console.log(query)
-  fetch(`http://127.0.0.1:5000/?${query}`)
+  if (process.env.NODE_ENV == "production"){
+    const queryUrl = `http://sjlee.me/imhungry-api/?${query}`
+  } else {
+    const queryUrl = `http://127.0.0.1:5000/?${query}`
+  }
+
+  fetch(queryUrl)
   .then((res) => {
     if (res.status >= 400){
       throw "http status " + res.status
