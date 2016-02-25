@@ -27,7 +27,7 @@ const handleAddLocation = (next, action) => {
 
   var queryUrl = ""
   if (process.env.NODE_ENV == "production"){
-    queryUrl = `http://sjlee.me/imhungry-api/?${query}`
+    queryUrl = `https://sjlee.me/imhungry-api/?${query}`
   } else {
     queryUrl = `http://127.0.0.1:5000/?${query}`
   }
