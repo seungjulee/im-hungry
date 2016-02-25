@@ -9,10 +9,12 @@ import style from './style.css'
 
 class App extends Component {
   render() {
-    const { eaters, appinfo, actions, children } = this.props
+    const { eaters, appinfo, actions } = this.props
     return (
-      <div className={style.normal}>
-        <Header addLocation={actions.addLocation} />
+      <div className={"app"}>
+        <div className={style.normal}>
+          <Header addLocation={actions.addLocation} />
+        </div>
         <GridGallery businesses={eaters} />
       </div>
     )

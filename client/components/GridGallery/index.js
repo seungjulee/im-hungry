@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import AutoResponsive from 'autoresponsive-react'
 import style from './style.css'
-import {getDistance} from 'geolib'
 
 let arrayList = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 let styleList = {};
@@ -77,7 +76,6 @@ class GridGallery extends Component {
 
 
     const grids = businesses.map((business) => {
-      // const distance = getDistance(business.cordinate,)
       return business.photo_urls.map(url=>{
         let style = {width: 258, height: 258};
         return (

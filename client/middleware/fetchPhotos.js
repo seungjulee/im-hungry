@@ -24,6 +24,7 @@ const handleAddLocation = (next, action) => {
     location: action.payload.label,
     term: "restaurants"
   })
+
   var queryUrl = ""
   if (process.env.NODE_ENV == "production"){
     queryUrl = `http://sjlee.me/imhungry-api/?${query}`

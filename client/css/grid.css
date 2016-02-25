@@ -67,7 +67,7 @@
   * The geosuggest module
   */
  .geosuggest {
-   font-size: 18px;
+   font-size: 12px;
    font-size: 1rem;
    position: relative;
    width: 50%;
@@ -77,14 +77,16 @@
  .geosuggest__input {
    width: 100%;
    border: 2px solid transparent;
-   box-shadow: 0 0 1px #3d464d;
+   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2),
+               0 25px 50px 0 rgba(0, 0, 0, 0.1);
    padding: .5em 1em;
    -webkit-transition: border 0.2s, box-shadow 0.2s;
            transition: border 0.2s, box-shadow 0.2s;
  }
  .geosuggest__input:focus {
    border-color: #267dc0;
-   box-shadow: 0 0 0 transparent;
+   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2),
+               0 25px 50px 0 rgba(0, 0, 0, 0.1);
  }
  .geosuggest__suggests {
    position: absolute;
@@ -109,5 +111,3 @@
    overflow: hidden;
    border-width: 0;
  }
-
-

@@ -5,7 +5,6 @@ import style from './style.css'
 
 class Header extends Component {
   handleSave(text) {
-    console.log(text,"handlesave")
     if (text.length) {
       this.props.addLocation(text.label)
     }
@@ -13,8 +12,8 @@ class Header extends Component {
 
   render() {
     const fixtures = [
-      {label: 'Little Saigon, San Francisco, CA, United States', location: {lat: 37.7842388, lng: -122.4199556}},
-      {label: 'Mission District, San Francisco, CA', location: {lat: 37.7599034, lng: -122.4343564}},
+      {label: 'Little Italy, San Francisco, CA', location: {lat: 37.8007601, lng: -122.4283141}},
+      {label: 'Mission Dolores Park, San Francisco, CA', location: {lat: 37.7597727, lng: -122.4292517}},
       {label: 'SoMa, San Francisco, CA', location: {lat: 37.7808144, lng: 122.419927}},
       {label: 'Chelsea, New York, NY', location: {lat: 40.747198, lng: -74.007082}}
     ];
@@ -33,9 +32,6 @@ class Header extends Component {
           placeholder="San Francisco, CA"
           onSuggestSelect={this.props.addLocation}
           />
-        <div className={style.normal}>
-
-        </div>
       </section>
     )
   }
