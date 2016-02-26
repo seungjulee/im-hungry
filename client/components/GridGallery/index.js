@@ -69,7 +69,7 @@ class GridGallery extends Component {
         <h6 styles={style.h6}>
           {"I'm sorry!"}
           <br></br>
-          {"Due to incrased traffic, Yelp has blocked my crawling server."}
+          {"Due to incrased traffic, Yelp has blocked the crawling server."}
           <br></br>
           {"I meant to do this project for fun for close friends."}
           <br></br>
