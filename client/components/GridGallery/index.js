@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import AutoResponsive from 'autoresponsive-react'
 import style from './style.css'
+import TextTruncate from 'react-text-truncate'
 
 let arrayList = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 let styleList = {};
@@ -65,12 +66,17 @@ class GridGallery extends Component {
 
     if (businesses[0].text === "InitialState"){
       return (
-        <section>
-          <div className="albumPanel" >
-            <AutoResponsive ref="container" {...this.getAutoResponsiveProps()}>
-            </AutoResponsive>
-          </div>
-        </section>
+        <h6 styles={style.h6}>
+          {"I'm sorry!"}
+          <br></br>
+          {"Due to incrased traffic, Yelp has blocked my crawling server."}
+          <br></br>
+          {"I meant to do this project for fun for close friends."}
+          <br></br>
+          {"I respect Yelp's rules, and I will continue work on it if Yelp opens its photos API."}
+          <br></br>
+        </h6>
+
       )
     }
 
