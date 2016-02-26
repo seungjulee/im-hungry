@@ -45,40 +45,40 @@ class GridGallery extends Component {
   }
 
   componentDidMount() {
-    window.addEventListener('resize', () => {
-      this.setState({
-        containerWidth: React.findDOMNode(this.refs.container).clientWidth
-      });
-    }, false);
+    // window.addEventListener('resize', () => {
+    //   this.setState({
+    //     containerWidth: React.findDOMNode(this.refs.container).clientWidth
+    //   });
+    // }, false);
   }
   getAutoResponsiveProps() {
-    return {
-      itemMargin: -10,
-      containerWidth: this.state.containerWidth || document.body.clientWidth,
-      itemClassName: 'item',
-      gridWidth: 258,
-      transitionDuration: '.5'
-    };
+    // return {
+    //   itemMargin: -10,
+    //   containerWidth: this.state.containerWidth || document.body.clientWidth,
+    //   itemClassName: 'item',
+    //   gridWidth: 258,
+    //   transitionDuration: '.5'
+    // };
   }
 
   render() {
     const {businesses} = this.props
 
-    if (businesses[0].text === "InitialState"){
-      return (
-        <h6 styles={style.h6}>
-          {"I'm sorry!"}
-          <br></br>
-          {"Due to incrased traffic, Yelp has blocked the crawling server."}
-          <br></br>
-          {"I meant to do this project for fun for close friends."}
-          <br></br>
-          {"I respect Yelp's rules, and I will continue work on it if Yelp opens its photos API."}
-          <br></br>
-        </h6>
+    // if (businesses[0].text === "InitialState"){
+    return (
+      <h6 styles={style.h6}>
+        {"I'm sorry!"}
+        <br></br>
+        {"Due to incrased traffic, Yelp has blocked the crawling server."}
+        <br></br>
+        {"I meant to do this project for fun for close friends."}
+        <br></br>
+        {"I respect Yelp's rules, and I will continue work on it if Yelp opens its photos API."}
+        <br></br>
+      </h6>
 
-      )
-    }
+    )
+    // }
 
 
     const grids = businesses.map((business) => {
@@ -100,7 +100,7 @@ class GridGallery extends Component {
       return prev.concat(curr)
     })
 
-    return (
+    const ifGrids = () => {
       <div className="albumPanel" >
         <AutoResponsive ref="container" {...this.getAutoResponsiveProps()}>
           {
@@ -108,8 +108,7 @@ class GridGallery extends Component {
           }
         </AutoResponsive>
       </div>
-    )
-
+    }
 
   }
 }
