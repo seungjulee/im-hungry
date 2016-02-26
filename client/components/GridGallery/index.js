@@ -90,7 +90,9 @@ class GridGallery extends Component {
         )
       })
     })
-    const finalGrids = grids[0].concat(grids[1])
+    const finalGrids = grids.reduce((prev, curr) => {
+      return prev.concat(curr)
+    })
 
     return (
       <div className="albumPanel" >
