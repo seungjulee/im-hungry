@@ -2,7 +2,7 @@
 http://devpost.com/software/i-m-hungry
 
 # Warning!!
-This project no longer works. Yelp noticed the crawling server and blocked it. It was built over one weekend, and didn't have time to go through thorough test.
+This project no longer works. Yelp noticed the crawling server and blocked it. It was built over one weekend, and didn't have time to go through thorough tests.
 
 ## For Development (OSX)
 ```bash
@@ -12,7 +12,11 @@ This project no longer works. Yelp noticed the crawling server and blocked it. I
 
 ## For Production (Ubuntu 14.04 Dockerfile)
 ```bash
-1. npm install
+1. sudo docker build -t imhungry_fe_img .
+2. sudo docker run \
+                -name imhungry_fe_instance \
+                -p 3000:3000 \
+                -i -t imhungry_fe_img
 
 ```
 
