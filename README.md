@@ -23,3 +23,4 @@ This project no longer works. Yelp noticed the crawling server and blocked it. I
 ## TODO:
 - Add script to handle logs for production
 - Add tests
+- Convert it to Isomorphic Redux (Server-side Rendering)
