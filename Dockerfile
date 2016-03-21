@@ -5,11 +5,12 @@ RUN mkdir -p /src
 
 # Install app dependencies
 COPY package.json /src
+WORKDIR /src
 RUN npm install
 
 # Bundle app source
-WORKDIR /src
 COPY . /src
+WORKDIR /src
 RUN npm build
 
 EXPOSE 3000
